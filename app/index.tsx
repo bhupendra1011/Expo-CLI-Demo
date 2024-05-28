@@ -1,4 +1,4 @@
-import { Text, View, useWindowDimensions } from "react-native";
+import { Text, View, useWindowDimensions, SafeAreaView } from "react-native";
 import WebView from "react-native-webview";
 
 export default function Index() {
@@ -6,11 +6,7 @@ export default function Index() {
   const DEPLOYED_APP_URL = "https://conferencing.agora.io";
 
   return (
-    <View
-      style={{
-        flex: 1,
-      }}
-    >
+    <SafeAreaView style={{ flex: 1 }}>
       <WebView
         allowsInlineMediaPlayback
         mediaPlaybackRequiresUserAction={false}
@@ -21,6 +17,6 @@ export default function Index() {
           width: width,
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 }
