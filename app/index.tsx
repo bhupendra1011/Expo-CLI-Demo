@@ -1,5 +1,6 @@
-import { Text, View, useWindowDimensions, SafeAreaView } from "react-native";
+import { Text, View, useWindowDimensions } from "react-native";
 import WebView from "react-native-webview";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   const { height, width } = useWindowDimensions();
