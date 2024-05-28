@@ -1,15 +1,26 @@
-import { Text, View } from "react-native";
+import { Text, View, useWindowDimensions } from "react-native";
+import WebView from "react-native-webview";
 
 export default function Index() {
+  const { height, width } = useWindowDimensions();
+  const DEPLOYED_APP_URL = "https://conferencing.agora.io";
+
   return (
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <WebView
+        allowsInlineMediaPlayback
+        mediaPlaybackRequiresUserAction={false}
+        source={{ uri: DEPLOYED_APP_URL }}
+        style={{
+          flex: 1,
+          height: height,
+          width: width,
+        }}
+      />
     </View>
   );
 }
